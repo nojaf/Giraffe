@@ -1,81 +1,101 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <!-- General -->
-    <AssemblyName>Giraffe</AssemblyName>
-    <Description>A native functional ASP.NET Core web framework for F# developers.</Description>
-    <Copyright>Copyright 2020 Dustin Moris Gorski</Copyright>
-    <Authors>Dustin Moris Gorski and contributors</Authors>
-    <NeutralLanguage>en-GB</NeutralLanguage>
+    <PropertyGroup>
+        <!-- General -->
+        <AssemblyName>Giraffe</AssemblyName>
+        <Description>A native functional ASP.NET Core web framework for F# developers.</Description>
+        <Copyright>Copyright 2020 Dustin Moris Gorski</Copyright>
+        <Authors>Dustin Moris Gorski and contributors</Authors>
+        <NeutralLanguage>en-GB</NeutralLanguage>
 
-    <!-- Build settings -->
-    <TargetFramework>net6.0</TargetFramework>
-    <DebugType>portable</DebugType>
-    <OutputType>Library</OutputType>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <IncludeSymbols>true</IncludeSymbols>
+        <!-- Build settings -->
+        <TargetFramework>net6.0</TargetFramework>
+        <DebugType>portable</DebugType>
+        <OutputType>Library</OutputType>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <IncludeSymbols>true</IncludeSymbols>
 
-    <!-- NuGet settings -->
-    <PackageId>Giraffe</PackageId>
-    <PackageTags>Giraffe;ASP.NET Core;Lambda;FSharp;Functional;Http;Web;Framework;Micro;Service</PackageTags>
-    <PackageReleaseNotes>https://raw.githubusercontent.com/giraffe-fsharp/giraffe/master/RELEASE_NOTES.md</PackageReleaseNotes>
-    <PackageProjectUrl>https://github.com/giraffe-fsharp/giraffe</PackageProjectUrl>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageIcon>giraffe-64x64.png</PackageIcon>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/giraffe-fsharp/Giraffe</RepositoryUrl>
+        <!-- NuGet settings -->
+        <PackageId>Giraffe</PackageId>
+        <PackageTags>Giraffe;ASP.NET Core;Lambda;FSharp;Functional;Http;Web;Framework;Micro;Service</PackageTags>
+        <PackageReleaseNotes>https://raw.githubusercontent.com/giraffe-fsharp/giraffe/master/RELEASE_NOTES.md</PackageReleaseNotes>
+        <PackageProjectUrl>https://github.com/giraffe-fsharp/giraffe</PackageProjectUrl>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageIcon>giraffe-64x64.png</PackageIcon>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/giraffe-fsharp/Giraffe</RepositoryUrl>
 
-    <!-- SourceLink settings -->
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <!-- SourceLink settings -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
 
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <NoWarn>FS2003;FS0044</NoWarn>
-  </PropertyGroup>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+        <NoWarn>FS2003;FS0044</NoWarn>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="../../giraffe-64x64.png">
-      <Pack>true</Pack>
-      <PackagePath>$(PackageIconUrl)</PackagePath>
-    </None>
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="../../giraffe-64x64.png">
+            <Pack>true</Pack>
+            <PackagePath>$(PackageIconUrl)</PackagePath>
+        </None>
+    </ItemGroup>
 
-  <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.2.*" />
-    <PackageReference Include="System.Text.Json" Version="6.0.*" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.*" />
-    <PackageReference Include="Utf8Json" Version="1.3.*" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.*" PrivateAssets="All" />
-    <PackageReference Include="Giraffe.ViewEngine" Version="1.3.*" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.2.*"/>
+        <PackageReference Include="System.Text.Json" Version="6.0.*"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.*"/>
+        <PackageReference Include="Utf8Json" Version="1.3.*"/>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.*" PrivateAssets="All"/>
+        <PackageReference Include="Giraffe.ViewEngine" Version="1.3.*"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <Compile Include="Helpers.fs" />
-    <Compile Include="ShortGuid.fs" />
-    <Compile Include="DateTimeExtensions.fs" />
-    <Compile Include="ComputationExpressions.fs" />
-    <Compile Include="Json.fs" />
-    <Compile Include="Xml.fs" />
-    <Compile Include="FormatExpressions.fs" />
-    <Compile Include="ModelParser.fs" />
-    <Compile Include="HttpContextExtensions.fs" />
-    <Compile Include="Core.fs" />
-    <Compile Include="ResponseCaching.fs" />
-    <Compile Include="ModelValidation.fs" />
-    <Compile Include="Auth.fs" />
-    <Compile Include="Routing.fs" />
-    <Compile Include="Preconditional.fs" />
-    <Compile Include="Streaming.fs" />
-    <Compile Include="Negotiation.fs" />
-    <Compile Include="HttpStatusCodeHandlers.fs" />
-    <Compile Include="Middleware.fs" />
-    <Compile Include="EndpointRouting.fs" />
-  </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Helpers.fsi"/>
+        <Compile Include="Helpers.fs"/>
+        <Compile Include="ShortGuid.fsi"/>
+        <Compile Include="ShortGuid.fs"/>
+        <Compile Include="DateTimeExtensions.fsi"/>
+        <Compile Include="DateTimeExtensions.fs"/>
+        <Compile Include="ComputationExpressions.fsi"/>
+        <Compile Include="ComputationExpressions.fs"/>
+        <Compile Include="Json.fsi"/>
+        <Compile Include="Json.fs"/>
+        <Compile Include="Xml.fsi"/>
+        <Compile Include="Xml.fs"/>
+        <Compile Include="FormatExpressions.fsi"/>
+        <Compile Include="FormatExpressions.fs"/>
+        <Compile Include="ModelParser.fsi"/>
+        <Compile Include="ModelParser.fs"/>
+        <Compile Include="HttpContextExtensions.fsi"/>
+        <Compile Include="HttpContextExtensions.fs"/>
+        <Compile Include="Core.fsi"/>
+        <Compile Include="Core.fs"/>
+        <Compile Include="ResponseCaching.fsi"/>
+        <Compile Include="ResponseCaching.fs"/>
+        <Compile Include="ModelValidation.fsi"/>
+        <Compile Include="ModelValidation.fs"/>
+        <Compile Include="Auth.fsi"/>
+        <Compile Include="Auth.fs"/>
+        <Compile Include="Routing.fsi"/>
+        <Compile Include="Routing.fs"/>
+        <Compile Include="Preconditional.fsi"/>
+        <Compile Include="Preconditional.fs"/>
+        <Compile Include="Streaming.fsi"/>
+        <Compile Include="Streaming.fs"/>
+        <Compile Include="Negotiation.fsi"/>
+        <Compile Include="Negotiation.fs"/>
+        <Compile Include="HttpStatusCodeHandlers.fsi"/>
+        <Compile Include="HttpStatusCodeHandlers.fs"/>
+        <Compile Include="Middleware.fsi"/>
+        <Compile Include="Middleware.fs"/>
+        <Compile Include="EndpointRouting.fsi"/>
+        <Compile Include="EndpointRouting.fs"/>
+    </ItemGroup>
 
 </Project>
